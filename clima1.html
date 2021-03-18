@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UFT-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programação em Microinformática - Exemplo 0%</title>
+  <link rel="stylesheet" href="styleClima1.css">     
+  
+</head>
+<body>		
+	  <label for="clima">Escolha o clima: </label>
+	  <select id="clima">
+		  <option value="">--Escolher--</option>
+		  <option value="Ensolarado">Ensolarado</option>
+		  <option value="Chuvoso">Chuvoso</option>
+		  <option value="Nevando">Nevando</option>
+		  <option value="Nublado">Nublado</option>
+      </select>
+	  <h1></h1>
+	  
+  <script>
+	
+	let select = document.querySelector('select'); 
+	let para = document.querySelector('h1');
+	let cor = document.querySelector('h1');
+	
+	select.addEventListener('change',escolherClima);
+			
+	function escolherClima(event) {
+	var opcao = select.value;
+
+	if (opcao === 'Ensolarado') {
+		para.textContent = 'Hoje é um excelente dia de sol.';
+		cor.style.color = "#FFD700";
+	} else if (opcao === 'Chuvoso') {
+		para.textContent = 'Hoje é um dia de chuva.';
+		cor.style.color = "#A9A9A9";
+	} else if (opcao === 'Nevando') {
+		cor.style.color= "#D8BFD8";
+		para.textContent = 'Hoje está nevando.';
+	} else if (opcao === 'Nublado') {
+		cor.style.color = "#B0E0E6";
+		para.textContent = 'Hoje é um dia nublado.';
+	} else {
+		cor.style.color = "#F00";
+		para.textContent = '';
+	}
+}
+
+  </script>
+  
+</body>
+</html>
