@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UFT-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programação em Microinformática - Exemplo 05</title>
+  <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+  <h1>Exemplo 05</h1>   
+  <form id="formulario">
+	<label>Escolha o clima:</label>
+	<input id="f_estacao" type="text" placeholder="Informe a estação do ano">		
+	<button id="f_enviar" type="submit">Enviar</button>
+  </form>
+	
+	<h2></h2>
+   
+  <script>
+	
+		function escolherClima(event){
+		
+			event.preventDefault()
+			
+			let estacao = f_estacao.value;
+			let texto = document.querySelector('h2');	
+			let cor = document.querySelector('h2');
+						
+			if (estacao === 'Ensolarado'){				
+				cor.style.color ="#00F";
+				texto.textContent ='Hoje é um excelente dia de sol.';			
+			}else if (estacao === 'Chuvoso'){
+				cor.style.color ="#F0F";
+				texto.textContent ='Hoje é um dia de chuva.';						
+			}else if (estacao === 'Nevando'){
+				cor.style.color ="#F88";
+				texto.textContent ='Hoje está nevando.';					
+			}else if (estacao === 'Nublado'){
+				cor.style.color ="#FC8";
+				texto.textContent ='Hoje é um dia nublado.';					
+			}else{
+				cor.style.color ="#F00";
+				texto.textContent ='Opção inválida';						
+			}			
+		}
+		
+		formulario.addEventListener('submit',escolherClima);
+  </script>
+  
+  
+</body>
+</html>
