@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UFT-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel ="stylesheet" href="stylegenero.css">
+  <title>Programação em Microinformática - Exemplo 05</title>  
+</head>
+<body>
+  <h1>Exemplo 05</h1>   
+  <form id="formulario">
+	<label>Nome</label>
+	<input id="f_nome" type="text" placeholder="Informe seu nome">
+	<label>Gênero</label>
+	<input id="f_genero" type="text" placeholder="Informe seu gênero">
+	<button id="f_enviar" type="submit">Enviar</button>
+  </form>
+	
+  <div id="texto"></div>	
+	
+  <script>
+	
+		function mostrarMsg(event){
+		
+			event.preventDefault()
+			
+			let nome = f_nome.value;
+			let genero = f_genero.value;
+			let cor = document.querySelector("div");
+			
+			if (genero === "Homem"){
+				cor.style.color ="#FF1493";
+				texto.innerHTML =`<font size="5">Seja bem-vindo ${nome}</font>`;	
+				return
+			}else if (genero === "Mulher"){				
+				cor.style.color ="#00F"
+				texto.innerHTML =`<h2>Seja bem-vindo ${nome}</h2>`;					
+				return
+			}else{
+				cor.style.color ="#F00";
+				texto.innerHTML =`<h2>Opção inválida!</h2>`;	
+				return
+			}						
+		}
+		
+		formulario.addEventListener('submit',mostrarMsg);
+  </script>
+  
+  
+</body>
+</html>
